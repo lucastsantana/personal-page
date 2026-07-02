@@ -1,0 +1,60 @@
+---
+interface Role {
+  title: string;
+  start: string;
+  end: string | null;
+  description: string;
+}
+interface Job {
+  company: string;
+  companyUrl: string;
+  location: string;
+  roles: Role[];
+  tags: string[];
+}
+interface Props { experience: Job[] }
+const { experience } = Astro.props;
+---
+
+<section id="experience" class="py-24 px-6 max-w-5xl mx-auto">
+  <h2 class="text-xs font-mono text-accent-400 uppercase tracking-widest mb-10">Experience</h2>
+
+  <div class="space-y-10">
+    {experience.map((job) => (
+      <div class="grid md:grid-cols-4 gap-4 md:gap-8">
+        <div class="md:col-span-1 pt-1">
+          <a
+            href={job.companyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold text-slate-200 hover:text-accent-400 transition-colors text-sm"
+          >
+            {job.company}
+          </a>
+          <p class="text-xs text-slate-500 mt-1">{job.location}</p>
+        </div>
+        <div class="md:col-span-3 space-y-6">
+          {job.roles.map((role) => (
+            <div class="relative pl-5 border-l border-slate-800">
+              <div class="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-accent-600 border-2 border-slate-950" />
+              <div class="flex items-start justify-between flex-wrap gap-2">
+                <h3 class="font-semibold text-slate-100 text-base">{role.title}</h3>
+                <span class="font-mono text-xs text-slate-500">
+                  {role.start} — {role.end ?? 'Present'}
+                </span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400 leading-relaxed">{role.description}</p>
+            </div>
+          ))}
+          <div class="flex flex-wrap gap-2 pl-5">
+            {job.tags.map((tag) => (
+              <span class="px-2 py-0.5 rounded text-xs bg-slate-800 text-slate-400 font-mono">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

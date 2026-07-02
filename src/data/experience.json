@@ -1,0 +1,16 @@
+[
+  {
+    "company": "Hashdex",
+    "companyUrl": "https://hashdex.com",
+    "location": "Rio de Janeiro, Brazil",
+    "roles": [
+      {
+        "title": "Head of Staking",
+        "start": "2022",
+        "end": null,
+        "description": "Lead staking infrastructure strategy and operations for Hashdex's crypto index products. Responsible for validator node management, staking yield optimization, and protocol research across major Proof-of-Stake networks. Contribute to product development for regulated crypto ETFs in Brazil and internationally."
+      }
+    ],
+    "tags": ["Blockchain", "Staking", "DeFi", "ETFs", "Infrastructure"]
+  }
+]

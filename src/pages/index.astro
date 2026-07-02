@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Academic from '../components/Academic.astro';
+import Publications from '../components/Publications.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+
+import profileData from '../data/profile.json';
+import experienceData from '../data/experience.json';
+import educationData from '../data/education.json';
+import publicationsData from '../data/publications.json';
+
+import { fetchGithubRepos } from '../lib/github';
+import { fetchInspireStats } from '../lib/inspirehep';
+
+const [repos, inspireStats] = await Promise.all([
+  fetchGithubRepos('lucastsantana'),
+  fetchInspireStats('L.T.Santana.1'),
+]);
+---
+
+<Layout>
+  <Nav />
+  <main>
+    <Hero profile={profileData} />
+    <SectionDivider />
+    <About profile={profileData} />
+    <SectionDivider />
+    <Experience experience={experienceData} />
+    <SectionDivider />
+    <Academic education={educationData} inspireStats={inspireStats} />
+    <SectionDivider />
+    <Publications publications={publicationsData} />
+    <SectionDivider />
+    <Projects repos={repos} githubUsername="lucastsantana" />
+    <SectionDivider />
+    <Contact profile={profileData} />
+  </main>
+</Layout>

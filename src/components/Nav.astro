@@ -1,0 +1,36 @@
+---
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#academic', label: 'Academic' },
+  { href: '#publications', label: 'Publications' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60">
+  <div class="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
+    <a href="#" class="font-mono text-sm text-accent-400 font-medium tracking-tight">
+      LTS<span class="text-slate-500">.</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-6">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="text-sm text-slate-400 hover:text-slate-100 transition-colors duration-200"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a
+      href="mailto:REDACTED"
+      class="hidden md:inline-flex text-xs font-medium px-3 py-1.5 rounded-md border border-accent-600/60 text-accent-400 hover:bg-accent-600/10 transition-colors duration-200"
+    >
+      Get in touch
+    </a>
+  </div>
+</nav>

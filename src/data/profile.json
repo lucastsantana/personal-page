@@ -1,0 +1,22 @@
+{
+  "name": "Lucas Torres Santana",
+  "title": "Head of Staking at Hashdex",
+  "tagline": "Theoretical physicist turned crypto infrastructure builder. Bridging rigorous science and decentralized finance.",
+  "location": "Rio de Janeiro, Brazil",
+  "email": "REDACTED",
+  "links": {
+    "github": "https://github.com/lucastsantana",
+    "linkedin": "https://www.linkedin.com/in/lucas-santana-90536295/",
+    "inspirehep": "https://inspirehep.net/authors/1669980",
+    "lattes": "http://lattes.cnpq.br/8207141215605554",
+    "orcid": "https://orcid.org/0000-0002-5795-9584",
+    "twitter": "https://twitter.com/lucastsantana"
+  },
+  "about": "I hold a PhD in Theoretical Physics from the Federal University of Rio de Janeiro (UFRJ), where I studied wave propagation in curved spacetimes — the mathematics underlying gravitational waves and light in general relativistic backgrounds. After a decade of academic research, I transitioned into the cryptocurrency industry, applying the same rigorous, first-principles thinking to staking infrastructure and digital asset management at Hashdex, one of Brazil's leading crypto asset managers. I thrive at the intersection of deep technical theory and real-world systems.",
+  "languages": [
+    { "name": "Portuguese", "level": "Native" },
+    { "name": "English", "level": "Fluent" },
+    { "name": "French", "level": "Intermediate" },
+    { "name": "Spanish", "level": "Basic" }
+  ]
+}

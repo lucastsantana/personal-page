@@ -1,0 +1,77 @@
+---
+import type { ProfileData } from '../types';
+interface Props { profile: ProfileData }
+const { profile } = Astro.props;
+
+const contacts = [
+  {
+    label: 'Email',
+    value: profile.email,
+    href: `mailto:${profile.email}`,
+    description: 'Best way to reach me',
+  },
+  {
+    label: 'GitHub',
+    value: '@lucastsantana',
+    href: profile.links.github,
+    description: 'Code & projects',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'Lucas Santana',
+    href: profile.links.linkedin,
+    description: 'Professional network',
+  },
+  {
+    label: 'Twitter / X',
+    value: '@lucastsantana',
+    href: profile.links.twitter,
+    description: 'Thoughts & updates',
+  },
+  {
+    label: 'InspireHEP',
+    value: 'L.T.Santana.1',
+    href: profile.links.inspirehep,
+    description: 'Academic publications',
+  },
+  {
+    label: 'Lattes',
+    value: 'CV Lattes',
+    href: profile.links.lattes,
+    description: 'Brazilian academic CV',
+  },
+];
+---
+
+<section id="contact" class="py-24 px-6 max-w-5xl mx-auto">
+  <h2 class="text-xs font-mono text-accent-400 uppercase tracking-widest mb-4">Contact</h2>
+  <p class="text-slate-400 text-lg mb-10 max-w-xl">
+    I'm always open to interesting conversations — whether about physics, crypto infrastructure, or potential collaborations.
+  </p>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {contacts.map(({ label, value, href, description }) => (
+      <a
+        href={href}
+        target={href.startsWith('mailto') ? undefined : '_blank'}
+        rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+        class="group p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-accent-700 transition-all duration-200"
+      >
+        <p class="text-xs font-mono text-slate-500 mb-1">{label}</p>
+        <p class="text-sm font-medium text-slate-200 group-hover:text-accent-400 transition-colors">{value}</p>
+        <p class="text-xs text-slate-600 mt-1">{description}</p>
+      </a>
+    ))}
+  </div>
+</section>
+
+<footer class="border-t border-slate-800 py-8 px-6 max-w-5xl mx-auto">
+  <div class="flex items-center justify-between flex-wrap gap-4">
+    <p class="text-xs text-slate-600 font-mono">
+      © {new Date().getFullYear()} Lucas Torres Santana
+    </p>
+    <p class="text-xs text-slate-700 font-mono">
+      Built with Astro · Deployed on Vercel
+    </p>
+  </div>
+</footer>

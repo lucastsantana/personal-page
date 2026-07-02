@@ -1,0 +1,46 @@
+---
+import type { ProfileData } from '../types';
+interface Props { profile: ProfileData }
+const { profile } = Astro.props;
+
+const facts = [
+  { label: 'Location', value: profile.location },
+  { label: 'Current role', value: profile.title },
+  { label: 'Research area', value: 'General Relativity & Quantum Cosmology' },
+  { label: 'ORCID', value: '0000-0002-5795-9584', href: profile.links.orcid },
+];
+---
+
+<section id="about" class="py-24 px-6 max-w-5xl mx-auto">
+  <div class="grid md:grid-cols-5 gap-12 items-start">
+    <div class="md:col-span-3">
+      <h2 class="text-xs font-mono text-accent-400 uppercase tracking-widest mb-4">About</h2>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        {profile.about}
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-2">
+        {profile.languages.map((lang) => (
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+            {lang.name} <span class="text-slate-500">· {lang.level}</span>
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <div class="md:col-span-2 space-y-3">
+      {facts.map(({ label, value, href }) => (
+        <div class="p-4 rounded-lg bg-slate-900 border border-slate-800">
+          <p class="text-xs font-mono text-slate-500 mb-1">{label}</p>
+          {href ? (
+            <a href={href} target="_blank" rel="noopener noreferrer" class="text-sm text-accent-400 hover:text-accent-300 transition-colors break-all">
+              {value}
+            </a>
+          ) : (
+            <p class="text-sm text-slate-200">{value}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

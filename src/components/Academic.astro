@@ -1,0 +1,79 @@
+---
+interface Degree {
+  institution: string;
+  institutionUrl: string;
+  degree: string;
+  field: string;
+  start: string;
+  end: string;
+  thesis: string | null;
+  advisors: string[];
+  highlights: string[];
+}
+interface Props {
+  education: Degree[];
+  inspireStats: { totalCitations: number; hIndex: number; paperCount: number };
+}
+const { education, inspireStats } = Astro.props;
+---
+
+<section id="academic" class="py-24 px-6 max-w-5xl mx-auto">
+  <h2 class="text-xs font-mono text-accent-400 uppercase tracking-widest mb-10">Academic Background</h2>
+
+  <div class="grid md:grid-cols-3 gap-4 mb-12">
+    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+      <p class="text-3xl font-bold text-slate-50">{inspireStats.totalCitations}</p>
+      <p class="text-xs text-slate-500 mt-1 font-mono uppercase tracking-wider">Total Citations</p>
+    </div>
+    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+      <p class="text-3xl font-bold text-slate-50">{inspireStats.paperCount}</p>
+      <p class="text-xs text-slate-500 mt-1 font-mono uppercase tracking-wider">Publications</p>
+    </div>
+    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+      <p class="text-3xl font-bold text-slate-50">h={inspireStats.hIndex}</p>
+      <p class="text-xs text-slate-500 mt-1 font-mono uppercase tracking-wider">h-Index</p>
+    </div>
+  </div>
+
+  <div class="space-y-6">
+    {education.map((deg, i) => (
+      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 grid md:grid-cols-4 gap-4">
+        <div class="md:col-span-1">
+          <span class="font-mono text-xs text-slate-500">{deg.start} – {deg.end}</span>
+          {deg.highlights.length > 0 && (
+            <div class="mt-2 space-y-1">
+              {deg.highlights.map((h) => (
+                <span class="block text-xs px-2 py-0.5 rounded bg-accent-900/40 text-accent-400 border border-accent-800/40">
+                  {h}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-semibold text-slate-100">{deg.degree}</h3>
+          <a
+            href={deg.institutionUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-accent-400 hover:text-accent-300 transition-colors"
+          >
+            {deg.institution}
+          </a>
+          <p class="text-xs text-slate-500 mt-0.5">{deg.field}</p>
+          {deg.thesis && (
+            <p class="mt-3 text-sm text-slate-400">
+              <span class="text-slate-500 font-mono text-xs">Thesis: </span>
+              <em>"{deg.thesis}"</em>
+            </p>
+          )}
+          {deg.advisors.length > 0 && (
+            <p class="mt-1 text-xs text-slate-500">
+              Advisors: {deg.advisors.join(', ')}
+            </p>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Unified Approach to Coupled Homogeneous Linear Wave Propagation in Generic Gravity",
+    "journal": "Physical Review D",
+    "volume": "110",
+    "issue": "4",
+    "article": "044031",
+    "year": 2024,
+    "authors": ["João C. Lobato", "Lucas T. Santana", "Maurício O. Calvão", "Ribamar R.R. Reis"],
+    "arxiv": "2407.04627",
+    "doi": "10.1103/PhysRevD.110.044031",
+    "citations": 1
+  },
+  {
+    "title": "Influence of Gravitational Waves Upon Light in the Minkowski Background",
+    "journal": "Physical Review D",
+    "volume": "104",
+    "issue": "2",
+    "article": "024024",
+    "year": 2021,
+    "authors": ["João C. Lobato", "Isabela S. Matos", "Lucas T. Santana", "Ribamar R.R. Reis", "Maurício O. Calvão"],
+    "arxiv": "2108.11795",
+    "doi": "10.1103/PhysRevD.104.024024",
+    "citations": 4
+  },
+  {
+    "title": "Influence of Gravitational Waves Upon Light. Part II",
+    "journal": "arXiv preprint",
+    "volume": null,
+    "issue": null,
+    "article": null,
+    "year": 2021,
+    "authors": ["João C. Lobato", "Isabela S. Matos", "Lucas T. Santana", "Ribamar R.R. Reis", "Maurício O. Calvão"],
+    "arxiv": "2103.02688",
+    "doi": null,
+    "citations": 3
+  },
+  {
+    "title": "Influence of Gravitational Waves Upon Light. Part I",
+    "journal": "arXiv preprint",
+    "volume": null,
+    "issue": null,
+    "article": null,
+    "year": 2021,
+    "authors": ["João C. Lobato", "Isabela S. Matos", "Lucas T. Santana", "Ribamar R.R. Reis", "Maurício O. Calvão"],
+    "arxiv": "2103.02632",
+    "doi": null,
+    "citations": 0
+  },
+  {
+    "title": "Evolution of the Electric Field Along Null Rays",
+    "journal": "Physical Review D",
+    "volume": "101",
+    "issue": "8",
+    "article": "081501",
+    "year": 2020,
+    "authors": ["João C. Lobato", "Isabela S. Matos", "Lucas T. Santana", "Maurício O. Calvão", "Ribamar R.R. Reis"],
+    "arxiv": "2004.03496",
+    "doi": "10.1103/PhysRevD.101.081501",
+    "citations": 7
+  },
+  {
+    "title": "How Does Light Move in a Generic Metric-Affine Background?",
+    "journal": "Physical Review D",
+    "volume": "95",
+    "issue": "6",
+    "article": "061501",
+    "year": 2017,
+    "authors": ["Lucas T. Santana", "Maurício O. Calvão", "Ribamar R.R. Reis", "Beatriz B. Siffert"],
+    "arxiv": "1703.10871",
+    "doi": "10.1103/PhysRevD.95.061501",
+    "citations": 24
+  }
+]

@@ -8,7 +8,7 @@
         "title": "Head of Staking",
         "start": "Dec 2025",
         "end": null,
-        "description": "Lead staking infrastructure strategy and operations across Hashdex's crypto index products. Responsible for validator node management, staking yield optimization, and protocol research across major Proof-of-Stake networks. Drive product development for regulated crypto ETFs distributed in Brazil and internationally."
+        "description": "Lead staking infrastructure strategy and operations across Hashdex's crypto index products. Oversee validator node management, staking yield optimization, and protocol research across major Proof-of-Stake networks. Drive product development for regulated crypto ETFs available in Brazil and internationally."
       },
       {
         "title": "Research Lead",
@@ -26,7 +26,7 @@
         "title": "Junior Research Analyst II",
         "start": "Dec 2021",
         "end": "Aug 2022",
-        "description": "Wrote a Primer on Smart Contracts and helped create marketing material for the launch of a crypto ETF in Brazil. Participated in investor calls showcasing the investment thesis for Layer-1s. Built workflows to gather on-chain and crypto market data and provided regular updates to internal shareholders and external clients."
+        "description": "Wrote a Primer on Smart Contracts and helped create marketing materials for the launch of a crypto ETF in Brazil. Participated in investor calls showcasing the investment thesis for Layer-1s. Built workflows to gather on-chain and crypto market data, and provided regular updates to internal stakeholders and external clients."
       }
     ],
     "tags": ["Blockchain", "Staking", "DeFi", "ETFs", "Python", "SQL", "Dune Analytics"]
@@ -40,19 +40,19 @@
         "title": "Geophysicist II",
         "start": "Dec 2020",
         "end": "Sep 2021",
-        "description": "Worked on production and research projects for datasets with different acquisition types, responsible for preprocessing and velocity model building routines (full-waveform inversion, ray-based tomography and interpretation). Daily workflow involved Python, shell scripting, and simulations in HPC environments."
+        "description": "Worked on production and research projects for datasets with different acquisition types, handling preprocessing and velocity model building routines including full-waveform inversion, ray-based tomography, and interpretation. Daily workflow involved Python, shell scripting, and simulations in HPC environments."
       },
       {
         "title": "Geophysicist I",
         "start": "Apr 2020",
         "end": "Nov 2020",
-        "description": "Developed intelligence and a workflow for a new imaging technology being tested at the Rio center."
+        "description": "Developed analytical workflows and data intelligence pipelines for a new imaging technology under evaluation at the Rio center."
       },
       {
         "title": "Geophysicist I",
         "start": "Oct 2019",
         "end": "Mar 2020",
-        "description": "Introduced to seismic processing and velocity model building. Worked on a production project at the Houston center targeting the Gulf of Mexico."
+        "description": "Gained hands-on experience in seismic processing and velocity model building, contributing to a production project at the Houston center targeting the Gulf of Mexico."
       }
     ],
     "tags": ["Seismic Processing", "Full-Waveform Inversion", "Python", "HPC", "Oil & Gas"]

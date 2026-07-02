@@ -1,0 +1,413 @@
+---
+import profileData from '../data/profile.json';
+import experienceData from '../data/experience.json';
+import educationData from '../data/education.json';
+import publicationsData from '../data/publications.json';
+
+const phone = '';
+const websiteUrl = 'lucastsantana.com';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucas Torres Santana — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --accent: #1a35cc;
+        --text: #111827;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --page-w: 780px;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.55;
+        color: var(--text);
+        background: #f3f4f6;
+      }
+
+      /* ── Print button bar ── */
+      .print-bar {
+        background: #1e293b;
+        color: #f8fafc;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 24px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .print-bar p { font-size: 13px; color: #94a3b8; }
+      .print-bar-actions { display: flex; gap: 10px; align-items: center; }
+      .btn-print {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #3366ff;
+        color: #fff;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .btn-print:hover { background: #2255ee; }
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .btn-back:hover { color: #f8fafc; }
+
+      /* ── Page ── */
+      .page {
+        max-width: var(--page-w);
+        margin: 28px auto;
+        background: #fff;
+        padding: 44px 52px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      }
+
+      /* ── Header ── */
+      .cv-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: start;
+        padding-bottom: 18px;
+        border-bottom: 2px solid var(--accent);
+        margin-bottom: 22px;
+      }
+      .cv-name {
+        font-size: 24pt;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--text);
+        line-height: 1.1;
+      }
+      .cv-title {
+        font-size: 11pt;
+        font-weight: 500;
+        color: var(--accent);
+        margin-top: 4px;
+      }
+      .cv-contact {
+        text-align: right;
+        font-size: 9pt;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .cv-contact a { color: var(--muted); text-decoration: none; }
+      .cv-contact a:hover { color: var(--accent); }
+
+      /* ── Sections ── */
+      section { margin-bottom: 22px; }
+      .section-title {
+        font-size: 8.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--accent);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 4px;
+        margin-bottom: 12px;
+      }
+
+      /* ── Summary ── */
+      .summary p { color: #374151; line-height: 1.6; }
+
+      /* ── Experience ── */
+      .job { margin-bottom: 16px; }
+      .job:last-child { margin-bottom: 0; }
+      .job-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: baseline;
+        gap: 8px;
+      }
+      .job-company {
+        font-weight: 600;
+        font-size: 10.5pt;
+        color: var(--text);
+      }
+      .job-location {
+        font-size: 8.5pt;
+        color: var(--muted);
+        text-align: right;
+      }
+      .role { margin-top: 5px; }
+      .role-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: baseline;
+        gap: 8px;
+      }
+      .role-title {
+        font-weight: 500;
+        font-size: 10pt;
+        color: #1f2937;
+      }
+      .role-dates {
+        font-size: 8.5pt;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .role-desc {
+        font-size: 9.5pt;
+        color: #374151;
+        margin-top: 3px;
+        line-height: 1.5;
+      }
+
+      /* ── Education ── */
+      .edu { margin-bottom: 12px; }
+      .edu:last-child { margin-bottom: 0; }
+      .edu-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: baseline;
+        gap: 8px;
+      }
+      .edu-degree { font-weight: 600; font-size: 10pt; }
+      .edu-dates { font-size: 8.5pt; color: var(--muted); }
+      .edu-institution { font-size: 9.5pt; color: var(--muted); }
+      .edu-detail { font-size: 9pt; color: #374151; margin-top: 2px; }
+      .edu-highlights {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 3px;
+      }
+      .edu-badge {
+        font-size: 8pt;
+        font-weight: 500;
+        color: var(--accent);
+        background: #eff2ff;
+        padding: 1px 7px;
+        border-radius: 99px;
+      }
+
+      /* ── Publications ── */
+      .pub { margin-bottom: 10px; font-size: 9.5pt; }
+      .pub:last-child { margin-bottom: 0; }
+      .pub-title { font-weight: 500; color: var(--text); line-height: 1.4; }
+      .pub-meta { color: var(--muted); margin-top: 1px; }
+      .pub-citation {
+        display: inline-block;
+        font-size: 8pt;
+        color: var(--accent);
+        font-weight: 500;
+        margin-left: 6px;
+      }
+
+      /* ── Skills ── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .skill-group-label {
+        font-size: 8.5pt;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+      }
+      .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+      .skill-tag {
+        font-size: 8.5pt;
+        color: #374151;
+        background: #f3f4f6;
+        border: 1px solid var(--border);
+        padding: 2px 7px;
+        border-radius: 4px;
+      }
+
+      /* ── Print styles ── */
+      @media print {
+        @page {
+          size: A4;
+          margin: 14mm 16mm;
+        }
+        body { background: #fff; font-size: 9.5pt; }
+        .print-bar { display: none !important; }
+        .page {
+          max-width: 100%;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+        }
+        .job { page-break-inside: avoid; }
+        .edu  { page-break-inside: avoid; }
+        .pub  { page-break-inside: avoid; }
+        a { color: inherit !important; text-decoration: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Print bar (hidden on print) -->
+    <div class="print-bar">
+      <div class="print-bar-actions">
+        <a href="/" class="btn-back">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to site
+        </a>
+        <p>In the print dialog, set Destination → <strong style="color:#f8fafc">Save as PDF</strong> and Paper → A4</p>
+      </div>
+      <button class="btn-print" onclick="window.print()">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        Save as PDF
+      </button>
+    </div>
+
+    <div class="page">
+
+      <!-- Header -->
+      <header class="cv-header">
+        <div>
+          <div class="cv-name">{profileData.name}</div>
+          <div class="cv-title">{profileData.title}</div>
+        </div>
+        <div class="cv-contact">
+          <a href={`mailto:${profileData.email}`}>{profileData.email}</a><br />
+          {profileData.location}<br />
+          <a href={profileData.links.linkedin}>linkedin.com/in/lucas-santana-90536295</a><br />
+          <a href={profileData.links.github}>github.com/lucastsantana</a><br />
+          <a href={`https://${websiteUrl}`}>{websiteUrl}</a>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section class="summary">
+        <div class="section-title">Summary</div>
+        <p>{profileData.about}</p>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <div class="section-title">Experience</div>
+        {experienceData.map((job) => (
+          <div class="job">
+            <div class="job-header">
+              <span class="job-company">{job.company}</span>
+              <span class="job-location">{job.location}</span>
+            </div>
+            {job.roles.map((role) => (
+              <div class="role">
+                <div class="role-header">
+                  <span class="role-title">{role.title}</span>
+                  <span class="role-dates">{role.start} – {role.end ?? 'Present'}</span>
+                </div>
+                <div class="role-desc">{role.description}</div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </section>
+
+      <!-- Education -->
+      <section>
+        <div class="section-title">Education</div>
+        {educationData.map((edu) => (
+          <div class="edu">
+            <div class="edu-header">
+              <span class="edu-degree">{edu.degree}</span>
+              <span class="edu-dates">{edu.start} – {edu.end}</span>
+            </div>
+            <div class="edu-institution">{edu.institution}</div>
+            {edu.thesis && (
+              <div class="edu-detail">Thesis: <em>"{edu.thesis}"</em></div>
+            )}
+            {edu.advisors.length > 0 && (
+              <div class="edu-detail" style="color:#6b7280">Advisors: {edu.advisors.join(', ')}</div>
+            )}
+            {edu.highlights.length > 0 && (
+              <div class="edu-highlights">
+                {edu.highlights.map((h) => <span class="edu-badge">{h}</span>)}
+              </div>
+            )}
+          </div>
+        ))}
+      </section>
+
+      <!-- Publications -->
+      <section>
+        <div class="section-title">Selected Publications</div>
+        {publicationsData.filter((p) => p.doi).map((paper) => (
+          <div class="pub">
+            <div class="pub-title">
+              {paper.title}
+              {paper.citations > 0 && (
+                <span class="pub-citation">({paper.citations} citations)</span>
+              )}
+            </div>
+            <div class="pub-meta">
+              {paper.authors.join(', ')} — <em>{paper.journal}</em>
+              {paper.volume && `, ${paper.volume}`}{paper.article && `, ${paper.article}`} ({paper.year})
+              {paper.doi && <> · DOI: {paper.doi}</>}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <!-- Skills & Languages -->
+      <section>
+        <div class="section-title">Skills & Languages</div>
+        <div class="skills-grid">
+          <div>
+            <div class="skill-group-label">Technical</div>
+            <div class="skill-tags">
+              {['Python', 'SQL', 'Dune Analytics', 'Glassnode', 'CryptoQuant', 'Plotly', 'Shell scripting', 'HPC'].map((s) => (
+                <span class="skill-tag">{s}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Domain</div>
+            <div class="skill-tags">
+              {['Staking', 'DeFi', 'ETFs', 'On-chain Analytics', 'Seismic Processing', 'Full-Waveform Inversion', 'General Relativity'].map((s) => (
+                <span class="skill-tag">{s}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Languages</div>
+            <div class="skill-tags">
+              {profileData.languages.map((l) => (
+                <span class="skill-tag">{l.name} <span style="color:#9ca3af">· {l.level}</span></span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </body>
+</html>

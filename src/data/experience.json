@@ -6,37 +6,55 @@
     "roles": [
       {
         "title": "Head of Staking",
-        "start": "2023",
+        "start": "Dec 2025",
         "end": null,
         "description": "Lead staking infrastructure strategy and operations across Hashdex's crypto index products. Responsible for validator node management, staking yield optimization, and protocol research across major Proof-of-Stake networks. Drive product development for regulated crypto ETFs distributed in Brazil and internationally."
       },
       {
         "title": "Research Lead",
-        "start": "2022",
-        "end": "2023",
-        "description": "Led quantitative and qualitative research on Bitcoin, Ethereum, Layer-1 alternatives, DeFi, and NFTs to support product and investment decisions. Applied Python and SQL to retrieve and process on-chain and market data using Dune Analytics, Glassnode, and CryptoQuant."
+        "start": "Dec 2024",
+        "end": "Nov 2025",
+        "description": "Led quantitative and qualitative research on Bitcoin, Ethereum, Layer-1 alternatives, DeFi, and NFTs to support product and investment decisions. Delivered high-stakes research inputs for executive leadership and global clients."
       },
       {
         "title": "Research Analyst",
-        "start": "2021",
-        "end": "2022",
-        "description": "Performed in-depth market analysis of crypto assets to inform index construction and ETF product development. Provided technical research on staking mechanics including bonding/unbonding periods and sweeping cycles."
+        "start": "Sep 2022",
+        "end": "Nov 2024",
+        "description": "Conducted extensive market research on Bitcoin, Ethereum, alternative Layer-1s (EVM and non-EVM), scaling solutions, DeFi, and NFTs. Provided in-depth technical knowledge for staking operations (bonding/unbonding periods, entry/exit churns, sweeping cycles). Used Python and SQL to retrieve and process on-chain and market data from Dune Analytics, Glassnode, and CryptoQuant."
+      },
+      {
+        "title": "Junior Research Analyst II",
+        "start": "Dec 2021",
+        "end": "Aug 2022",
+        "description": "Wrote a Primer on Smart Contracts and helped create marketing material for the launch of a crypto ETF in Brazil. Participated in investor calls showcasing the investment thesis for Layer-1s. Built workflows to gather on-chain and crypto market data and provided regular updates to internal shareholders and external clients."
       }
     ],
-    "tags": ["Blockchain", "Staking", "DeFi", "ETFs", "Python", "On-chain Analytics"]
+    "tags": ["Blockchain", "Staking", "DeFi", "ETFs", "Python", "SQL", "Dune Analytics"]
   },
   {
     "company": "CGG",
     "companyUrl": "https://www.cgg.com",
-    "location": "Houston, TX, United States",
+    "location": "Rio de Janeiro, Brazil · Houston, TX, United States",
     "roles": [
       {
-        "title": "Geophysicist",
-        "start": "2019",
-        "end": "2021",
-        "description": "Seismic data processing for Oil & Gas exploration projects targeting the Gulf of Mexico. Applied signal processing and wave propagation methods to subsurface imaging, drawing on the same mathematical frameworks studied in theoretical physics."
+        "title": "Geophysicist II",
+        "start": "Dec 2020",
+        "end": "Sep 2021",
+        "description": "Worked on production and research projects for datasets with different acquisition types, responsible for preprocessing and velocity model building routines (full-waveform inversion, ray-based tomography and interpretation). Daily workflow involved Python, shell scripting, and simulations in HPC environments."
+      },
+      {
+        "title": "Geophysicist I",
+        "start": "Apr 2020",
+        "end": "Nov 2020",
+        "description": "Developed intelligence and a workflow for a new imaging technology being tested at the Rio center."
+      },
+      {
+        "title": "Geophysicist I",
+        "start": "Oct 2019",
+        "end": "Mar 2020",
+        "description": "Introduced to seismic processing and velocity model building. Worked on a production project at the Houston center targeting the Gulf of Mexico."
       }
     ],
-    "tags": ["Seismic Processing", "Signal Processing", "Wave Propagation", "Oil & Gas"]
+    "tags": ["Seismic Processing", "Full-Waveform Inversion", "Python", "HPC", "Oil & Gas"]
   }
 ]

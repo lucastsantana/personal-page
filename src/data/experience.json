@@ -8,9 +8,35 @@
         "title": "Head of Staking",
         "start": "2022",
         "end": null,
-        "description": "Lead staking infrastructure strategy and operations for Hashdex's crypto index products. Responsible for validator node management, staking yield optimization, and protocol research across major Proof-of-Stake networks. Contribute to product development for regulated crypto ETFs in Brazil and internationally."
+        "description": "Lead staking infrastructure strategy and operations across Hashdex's crypto index products. Responsible for validator node management, staking yield optimization, and protocol research across major Proof-of-Stake networks. Drive product development for regulated crypto ETFs distributed in Brazil and internationally."
+      },
+      {
+        "title": "Research Lead",
+        "start": "2021",
+        "end": "2022",
+        "description": "Led quantitative and qualitative research on Bitcoin, Ethereum, Layer-1 alternatives, DeFi, and NFTs to support product and investment decisions. Applied Python and SQL to retrieve and process on-chain and market data using Dune Analytics, Glassnode, and CryptoQuant."
+      },
+      {
+        "title": "Research Analyst",
+        "start": "2020",
+        "end": "2021",
+        "description": "Performed in-depth market analysis of crypto assets to inform index construction and ETF product development. Provided technical research on staking mechanics including bonding/unbonding periods and sweeping cycles."
       }
     ],
-    "tags": ["Blockchain", "Staking", "DeFi", "ETFs", "Infrastructure"]
+    "tags": ["Blockchain", "Staking", "DeFi", "ETFs", "Python", "On-chain Analytics"]
+  },
+  {
+    "company": "CGG",
+    "companyUrl": "https://www.cgg.com",
+    "location": "Houston, TX, United States",
+    "roles": [
+      {
+        "title": "Geophysicist",
+        "start": "2017",
+        "end": "2019",
+        "description": "Seismic data processing for Oil & Gas exploration projects targeting the Gulf of Mexico. Applied signal processing and wave propagation methods to subsurface imaging, drawing on the same mathematical frameworks studied in theoretical physics."
+      }
+    ],
+    "tags": ["Seismic Processing", "Signal Processing", "Wave Propagation", "Oil & Gas"]
   }
 ]

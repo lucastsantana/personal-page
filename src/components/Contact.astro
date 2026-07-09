@@ -3,13 +3,12 @@ import type { ProfileData } from '../types';
 interface Props { profile: ProfileData }
 const { profile } = Astro.props;
 
+// Sign up at https://formspree.io, create a form, and replace this ID with
+// the one it issues (e.g. "abcdwxyz"). Formspree relays submissions to your
+// inbox without ever exposing your address in the page source.
+const FORMSPREE_FORM_ID = 'YOUR_FORM_ID';
+
 const contacts = [
-  {
-    label: 'Email',
-    value: profile.email,
-    href: `mailto:${profile.email}`,
-    description: 'Best way to reach me',
-  },
   {
     label: 'GitHub',
     value: '@lucastsantana',
@@ -49,12 +48,47 @@ const contacts = [
     I'm always open to interesting conversations — whether about physics, crypto infrastructure, or potential collaborations.
   </p>
 
+  <form
+    action={`https://formspree.io/f/${FORMSPREE_FORM_ID}`}
+    method="POST"
+    class="grid sm:grid-cols-2 gap-4 mb-10 max-w-xl"
+  >
+    <input
+      type="text"
+      name="name"
+      required
+      placeholder="Your name"
+      class="sm:col-span-1 bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-accent-600"
+    />
+    <input
+      type="email"
+      name="_replyto"
+      required
+      placeholder="Your email"
+      class="sm:col-span-1 bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-accent-600"
+    />
+    <textarea
+      name="message"
+      required
+      rows={4}
+      placeholder="Message"
+      class="sm:col-span-2 bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-accent-600"
+    ></textarea>
+    <input type="text" name="_gotcha" class="hidden" tabindex={-1} autocomplete="off" />
+    <button
+      type="submit"
+      class="sm:col-span-2 justify-self-start px-5 py-2.5 rounded-lg bg-accent-600 text-white text-sm font-medium hover:bg-accent-500 transition-colors duration-200"
+    >
+      Send message
+    </button>
+  </form>
+
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
     {contacts.map(({ label, value, href, description }) => (
       <a
         href={href}
-        target={href.startsWith('mailto') ? undefined : '_blank'}
-        rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+        target="_blank"
+        rel="noopener noreferrer"
         class="group p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-accent-700 transition-all duration-200"
       >
         <p class="text-xs font-mono text-slate-500 mb-1">{label}</p>

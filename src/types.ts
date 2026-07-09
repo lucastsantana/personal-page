@@ -3,7 +3,6 @@ export interface ProfileData {
   title: string;
   tagline: string;
   location: string;
-  email: string;
   links: {
     github: string;
     linkedin: string;
